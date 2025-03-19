@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dozo Diet Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo_dozo.png" alt="Dozo Logo" class="logo">
+    </header>
+    <main>
+        <h1>Diet Planner</h1>
+        <form id="dietForm">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" required>
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" min="1" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="activity">Activity Level:</label>
+                <select id="activity" required>
+                    <option value="">Select</option>
+                    <option value="low">Low</option>
+                    <option value="light">Light</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="high">High</option>
+                    <option value="intense">Intense</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="goal">Weight Goal:</label>
+                <select id="goal" required>
+                    <option value="">Select</option>
+                    <option value="lose">Lose</option>
+                    <option value="maintain">Maintain</option>
+                    <option value="gain">Gain</option>
+                </select>
+            </div>
+
+            <fieldset>
+                <legend>Medical Conditions:</legend>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="condition" value="diabetes" id="diabetes">
+                    <label for="diabetes">Diabetes</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="condition" value="celiac" id="celiac">
+                    <label for="celiac">Celiac Disease</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="condition" value="cholesterol" id="cholesterol">
+                    <label for="cholesterol">High Cholesterol</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="condition" value="lactose" id="lactose">
+                    <label for="lactose">Lactose Intolerance</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="condition" value="hypertension" id="hypertension">
+                    <label for="hypertension">Hypertension</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="condition" value="pregnancy" id="pregnancy">
+                    <label for="pregnancy">Pregnancy</label>
+                </div>
+                <div class="form-group">
+                    <label for="allergies">Allergies:</label>
+                    <input type="text" id="allergies" placeholder="e.g., peanuts, eggs">
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="dietType">Diet Type:</label>
+                <select id="dietType" required>
+                    <option value="">Select</option>
+                    <option value="normal">Normal</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                </select>
+            </div>
+
+            <fieldset>
+                <legend>Meals to Include:</legend>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="meal" value="breakfast" id="breakfast">
+                    <label for="breakfast">Breakfast</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="meal" value="firstSnack" id="firstSnack">
+                    <label for="firstSnack">First Snack</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="meal" value="lunch" id="lunch">
+                    <label for="lunch">Lunch</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="meal" value="secondSnack" id="secondSnack">
+                    <label for="secondSnack">Second Snack</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="meal" value="dinner" id="dinner">
+                    <label for="dinner">Dinner</label>
+                </div>
+            </fieldset>
+
+            <div class="form-group">
+                <label for="days">Number of Days (1-30):</label>
+                <input type="number" id="days" min="1" max="30" required>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">Generate Diet</button>
+                <button type="button" id="reset">Reset</button>
+            </div>
+        </form>
+
+        <div id="result"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
